@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackSecure</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #00FF00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Loader Styles */
+        #loader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            display: none; /* Initially hidden */
+        }
+
+        .loading-text {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Main Content */
+        #content {
+            padding: 50px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #00FF00;
+            border: none;
+            cursor: pointer;
+        }
+
+        #ip-display {
+            display: none; /* Initially hidden */
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #FF0000; /* Red color for effect */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <h1>Loading HackSecure...</h1>
+        <p class="loading-text">Initializing system...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+        <h1>IP ADDRESS HACKING</h1>
+        <p>Sachintha Chethiya</p>
+        <button class="button" onclick="startLoading()">Start</button>
+        <p id="ip-display"></p> <!-- IP Address + Phone Numbers Display Here -->
+    </div>
+
+    <script>
+        // Function to show loader on button click
+        function startLoading() {
+            document.getElementById("content").style.display = "none"; // Hide content
+            document.getElementById("loader").style.display = "flex"; // Show loader
+
+            setTimeout(() => {
+                document.getElementById("loader").style.display = "none"; // Hide loader
+                document.getElementById("content").style.display = "block"; // Show content
+                
+                // Show mission complete alert
+                alert("MISSION COMPLETE");
+                
+                // Display IP Address + Phone Numbers after mission complete
+                document.getElementById("ip-display").innerText = "IP: 192.168.1.1.1.11111\n0769615987\n0712345678\n77 938 6679";
+                document.getElementById("ip-display").style.display = "block";
+            }, 5000); // 5-second delay
+        }
+    </script>
+
+</body>
+</html>
